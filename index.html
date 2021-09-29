@@ -1,12 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My portfilio page">
+    <meta name="keywords" content="CV, portfolio, ">
+    <meta name="author" content="nazzrrg">
     <title>ITMO-Web</title>
 </head>
 <body>
-    Назаров Егор Александрович М33011
+<header>
+    <h1>Назаров Егор Александрович М33011</h1>
+    <p>C++ Junior backend developer from <i>Saint-Petersburg, Russia</i></p>
+    <nav>
+        <a href="#face">Моя физиономия</a>
+        <a href="#about">Обо мне</a>
+        <a href="#code-sample">Код</a>
+        <a href="#ascii-graphics">Гуси</a>
+        <a target="_blank" href="https://github.com/nazzrrg">Гит</a>
+    </nav>
+</header>
+<main>
+    <section class="page-block" id="face">
+        <h2 class="block-header">Моя морда</h2>
+        <img src="src/img/face.jpg" alt="Мой фейс не айди">
+    </section>
+    <section class="page-block" id="about">
+        <h2 class="block-header">Обо мне</h2>
+        <article>
+            Я <del>лучще всех</del> <ins>скромный</ins> программист из славного города Пермь. К языкам отношусь сугубо утилитарно, возможно, поэтому моя судьба <em>наградила</em> меня работой на плюсах.<br>
+            Мои успехи:
+            <ul>
+                <li>Родился в России</li>
+                <li>Выжил</li>
+                <li>Поступил в итмо</li>
+            </ul>
+            Мои неуспехи:
+            <ol>
+                <li>Не сын депутата</li>
+                <li>И не нефтяного татарского магната</li>
+                <li>И даже не владельца норникеля</li>
+            </ol>
+            Однако это не мешает мне жить и радоваться жизни! Всемб добра и пива!
+        </article>
+    </section>
+    <section class="page-block" id="code-sample">
+        <h2 class="block-header">Мой кот(д)</h2>
+        <pre><code>
+int main(int argc, char **argv) {
+    locale::global(locale(""));
+
+    if (argc != 3) {
+        cerr << "Incorrect number of arguments!" << endl;
+        exit(1);
+    }
+
+    int n = stoi(argv[1]);
+    string str = string(argv[2]);
+    wstring wstr = utf8_to_wstring(str);
+
+    wstring result;
+
+    if (n >= wstr.size()) {
+        result = wstring(n - wstr.length(), ' ') + wstr;
+    } else {
+        result = wstr.substr(wstr.length() - n, n);
+    }
+
+    transform(result.begin(), result.end(), result.begin(), towupper);
+
+    cout << wstring_to_utf8(result) << endl;
+
+    return 0;
+}
+        </code></pre>
+    </section>
+    <section class="page-block" id="ascii-graphics">
+        <h2 class="block-header">Гуси</h2>
+        <pre>
+──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+───▄▄██▌█░ВЕЗЁМ▄▀▀▀▄░ГУСЕЙ░░░░░░░
+───████▌█▄███▀░◐░▄▀▀▀▄░░РАБОТЯГИ░
+──██░░█▌█░░▄███▀░◐░░▄▀▀▀▄░░░░░░░
+─██░░░█▌█░░░░▐░▄▀▀▀▌░░░░◐░▀███▄░
+▄██████▌█▄███▀░◐░░░▌░░░░░▐░░░░░░
+███████▌█░░░░▌░░░░░▌░░░░░▐░░░░░░
+███████▌█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+▀(@)▀▀▀▀▀▀▀(@)(@)▀▀▀▀▀▀▀▀▀▀▀▀▀(@)▀(@)
+        </pre>
+    </section>
+    <aside id="quote">
+        <p>Ты что думал, в сказку попал?<sub>Конфуций, 1337 век до н.э.</sub></p>
+    </aside>
+</main>
+<footer>
+    <section class="footer-contacts">Contact me: <a href="http://t.me/nazzrrg">@nazzrrg</a></section>
+    <section class="footer-copyright">© <b>nazzrrg</b>, 2021</section>
+</footer>
 </body>
 </html>
