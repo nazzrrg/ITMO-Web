@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;0,900&display=swap');
 
+pre, h1, p{
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: normal;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -29,7 +37,7 @@ header {
 
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
@@ -65,10 +73,10 @@ nav {
 }
 
 nav a {
-    flex-grow: 1;
+    flex: 1 0 25%;
     align-content: center;
 
-    padding: 15px;
+    padding: 15px 0;
 
     font-family: 'Roboto', sans-serif;
     font-size: 1.3em;
@@ -93,8 +101,8 @@ main {
 }
 
 .img-crop {
-    max-width: 300px;
-    max-height: 300px;
+    width: 200px;
+    height: 200px;
     position: relative;
     overflow: hidden;
     border-radius: 50%;
@@ -136,6 +144,7 @@ h2 {
 
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 #about .photo {
@@ -147,6 +156,7 @@ h2 {
 #about article {
     order: 3;
     flex-grow: 4;
+    padding-left: 1%;
 
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
@@ -179,9 +189,9 @@ h2 {
 }
 
 aside {
-    position: fixed;
-    top: 25%;
-    right: 1%;
+    order: 5;
+    /*top: 25%;*/
+    /*right: 1%;*/
 }
 #quote {
     background-color: #d8d9d9;
