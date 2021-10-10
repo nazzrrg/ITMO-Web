@@ -7,14 +7,18 @@
     <meta name="description" content="My portfilio page">
     <meta name="keywords" content="CV, portfolio, ">
     <meta name="author" content="nazzrrg">
+
+    <link rel="stylesheet" href="styles.css">
+
     <title>ITMO-Web</title>
 </head>
 <body>
 <header>
-    <h1>Назаров Егор Александрович М33011</h1>
-    <p>C++ Junior backend developer from <i>Saint-Petersburg, Russia</i></p>
+    <div id="header-text">
+        <h1>Назаров Егор Александрович М33011</h1>
+        <p>C++ Junior backend developer from <i>Saint-Petersburg, Russia</i></p>
+    </div>
     <nav>
-        <a href="#face">Моя физиономия</a>
         <a href="#about">Обо мне</a>
         <a href="#code-sample">Код</a>
         <a href="#ascii-graphics">Гуси</a>
@@ -22,31 +26,35 @@
     </nav>
 </header>
 <main>
-    <section class="page-block" id="face">
-        <h2 class="block-header">Моя морда</h2>
-        <img src="src/img/face.jpg" alt="Мой фейс не айди">
-    </section>
     <section class="page-block" id="about">
         <h2 class="block-header">Обо мне</h2>
-        <article>
-            Я <del>лучще всех</del> <ins>скромный</ins> программист из славного города Пермь. К языкам отношусь сугубо утилитарно, возможно, поэтому моя судьба <em>наградила</em> меня работой на плюсах.<br>
-            Мои успехи:
-            <ul>
-                <li>Родился в России</li>
-                <li>Выжил</li>
-                <li>Поступил в итмо</li>
-            </ul>
-            Мои неуспехи:
-            <ol>
-                <li>Не сын депутата</li>
-                <li>И не нефтяного татарского магната</li>
-                <li>И даже не владельца норникеля</li>
-            </ol>
-            Однако это не мешает мне жить и радоваться жизни! Всемб добра и пива!
-        </article>
+        <div class="block-contents">
+            <div class="photo">
+                <div class="img-crop">
+                    <img src="src/img/face.jpg" alt="Мой фейс не айди">
+                </div>
+            </div>
+                <article>
+                    Я <del>лучще всех</del> <ins>скромный</ins> программист из славного города Пермь. К языкам отношусь сугубо утилитарно, возможно, поэтому моя судьба <em>наградила</em> меня работой на плюсах.<br>
+                    Мои успехи:
+                    <ul>
+                        <li>Родился в России</li>
+                        <li>Выжил</li>
+                        <li>Поступил в итмо</li>
+                    </ul>
+                    Мои неуспехи:
+                    <ol>
+                        <li>Не сын депутата</li>
+                        <li>И не нефтяного татарского магната</li>
+                        <li>И даже не владельца норникеля</li>
+                    </ol>
+                    Однако это не мешает мне жить и радоваться жизни! Всемб добра и пива!
+                </article>
+        </div>
     </section>
     <section class="page-block" id="code-sample">
         <h2 class="block-header">Мой кот(д)</h2>
+        <div class="block-contents">
         <pre><code>
 int main(int argc, char **argv) {
     locale::global(locale(""));
@@ -75,9 +83,11 @@ int main(int argc, char **argv) {
     return 0;
 }
         </code></pre>
+        </div>
     </section>
     <section class="page-block" id="ascii-graphics">
         <h2 class="block-header">Гуси</h2>
+        <div class="block-contents">
         <pre>
 ──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
 ───▄▄██▌█░ВЕЗЁМ▄▀▀▀▄░ГУСЕЙ░░░░░░░
@@ -89,9 +99,10 @@ int main(int argc, char **argv) {
 ███████▌█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
 ▀(@)▀▀▀▀▀▀▀(@)(@)▀▀▀▀▀▀▀▀▀▀▀▀▀(@)▀(@)
         </pre>
+        </div>
     </section>
     <aside id="quote">
-        <p>Ты что думал, в сказку попал?<sub>Конфуций, 1337 век до н.э.</sub></p>
+        <q>Ты что думал, в сказку попал?</q><sub> <span class="gradient">Конфуций</span>, 1337 век до н.э.</sub>
     </aside>
 </main>
 <footer>
