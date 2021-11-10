@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;0,900&display=swap');
 
-pre, h1, p{
+pre, h1, p {
     overflow-x: auto;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
@@ -8,23 +8,37 @@ pre, h1, p{
     word-wrap: normal;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     display: flex;
     flex-direction: column;
 
     margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    /*overflow: hidden;*/
 
     background-color: #ECEFFB;
 }
 
 header {
     order: 1;
+    flex: 0 0 auto;
 
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
 
     width: 100%;
+    z-index: 2;
 
     background-color: #4E577A;
     -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
@@ -66,16 +80,17 @@ nav {
     order: 2;
 
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     flex-wrap: wrap;
 
     width: 100%;
 }
 
 nav a {
-    flex: 1 0 25%;
-    align-content: center;
-
+    flex: 1 0 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 15px 0;
 
     font-family: 'Roboto', sans-serif;
@@ -91,8 +106,18 @@ nav a:hover {
     transition: all 0.3s ease 0s;
 }
 
-main {
+#content {
     order: 2;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 100%;
+}
+
+main {
+    order: 1;
+    position: relative; /* need this to position inner content */
 
     display: flex;
     flex-direction: column;
@@ -121,13 +146,14 @@ img {
     flex-direction: column;
     flex-wrap: nowrap;
 
+    border-bottom: dashed 2px grey;
     width: 100%;
 }
 
 .block-header {
     order: 1;
 
-    width: 100%;
+    width: 98%;
     padding-left: 2%;
 }
 
@@ -169,8 +195,6 @@ h2 {
 }
 
 #code-sample {
-    order: 3;
-
     width: 100%;
 }
 
@@ -179,30 +203,22 @@ h2 {
     margin: 0;
 }
 
-#ascii-graphics {
-    order: 4;
-}
-
 #ascii-graphics pre {
     padding: 0 3%;
     margin: 0;
 }
 
-aside {
-    order: 5;
-}
 #quote {
     background-color: #d8d9d9;
-    padding: 10px;
+    padding: 0;
 }
-
 
 .gradient {
     background-color: #f5d5e5;
 }
 
 footer {
-    order: 3;
+    order: 2;
 
     display: flex;
     flex-direction: row;
@@ -227,7 +243,50 @@ footer a {
     order: 2;
     color: #fdfdff;
 }
+
 .footer-copyright {
     order: 1;
     color: #fdfdff;
+}
+
+aside {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 580px) {
+    #github-link {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 581px) and (max-width: 1024px) {
+    #github-link {
+        display: block;
+    }
+}
+
+table {
+    padding: 1vw;
+}
+th:nth-child(1), td:nth-child(1) {
+    width: 150px;
+}
+td:not(:first-child) {
+    width: 100px;
+}
+
+tr:nth-child(even) {
+    background: #8292d2
+}
+
+tr:nth-child(odd) {
+    background: #c0ceea
+}
+
+.hide-overflow {
+    overflow: hidden;
 }
