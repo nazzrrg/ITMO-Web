@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My portfilio page">
+    <meta name="keywords" content="CV, portfolio, ">
+    <meta name="author" content="nazzrrg">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>ITMO-Web</title>
+
+    <script src="./src/script/main.js"></script>
+</head>
+<body>
+<div id="content-and-footer">
+    <main id="content">
+        <section class="page-block" id="code-sample">
+            <h2 class="block-header">Мой кот(д)</h2>
+            <div class="block-contents">
+        <pre><code>
+int main(int argc, char **argv) {
+    locale::global(locale(""));
+
+    if (argc != 3) {
+        cerr << "Incorrect number of arguments!" << endl;
+        exit(1);
+    }
+
+    int n = stoi(argv[1]);
+    string str = string(argv[2]);
+    wstring wstr = utf8_to_wstring(str);
+
+    wstring result;
+
+    if (n >= wstr.size()) {
+        result = wstring(n - wstr.length(), ' ') + wstr;
+    } else {
+        result = wstr.substr(wstr.length() - n, n);
+    }
+
+    transform(result.begin(), result.end(), result.begin(), towupper);
+
+    cout << wstring_to_utf8(result) << endl;
+
+    return 0;
+}
+        </code></pre>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

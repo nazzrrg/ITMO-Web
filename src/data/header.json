@@ -1,0 +1,45 @@
+{
+  "text_big": "Назаров Егор Александрович М33011",
+  "text_small": "C++ Junior backend developer from Saint-Petersburg, Russia",
+  "extra_nav_exists": false,
+  "nav": [
+    {
+      "href": "index.html",
+      "text": "Главная"
+    },
+    {
+      "href": "about.html",
+      "text": "Обо мне"
+    },
+    {
+      "href": "code_samples.html",
+      "text": "Код"
+    },
+    {
+      "href": "geese.html",
+      "text": "Гуси"
+    },
+    {
+      "href": "table.html",
+      "text": "Таблица"
+    },
+    {
+      "href": "quotes.html",
+      "text": "Цитаты"
+    }
+  ],
+  "extra_nav": [
+    {
+      "href": "geese.html",
+      "text": "Гуси"
+    },
+    {
+      "href": "table.html",
+      "text": "Таблица"
+    },
+    {
+      "href": "quotes.html",
+      "text": "Цитаты"
+    }
+  ]
+}

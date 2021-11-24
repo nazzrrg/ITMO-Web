@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;0,900&display=swap');
 
+html {
+    height: 100%;
+    visibility: hidden;
+}
+
 pre, h1, p {
     overflow-x: auto;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: normal;
-}
-
-html {
-    height: 100%;
 }
 
 body {
@@ -20,13 +21,19 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
     height: 100vh;
-    /*overflow: hidden;*/
 
     background-color: #ECEFFB;
+}
+
+#content-and-footer {
+    order: 2;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 100%;
 }
 
 header {
@@ -86,10 +93,11 @@ nav {
     width: 100%;
 }
 
-nav a {
+nav a, #nav-drop {
     flex: 1 0 20%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding: 15px 0;
 
@@ -101,23 +109,31 @@ nav a {
     color: #101018;
 }
 
-nav a:hover {
+nav a:hover, #nav-drop:hover {
     background-color: #9fa3b6;
     transition: all 0.3s ease 0s;
 }
 
-#content {
-    order: 2;
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    width: 100%;
+#nav-drop {
+    cursor: pointer; /* todo */
+}
+
+.nav-selected {
+    flex-grow: 3;
+    padding: 10px 0;
+}
+
+.nav-selected:after {
+    content: "";
+    height: 3px;
+    width: 90%;
+    border-bottom: solid 3px #fdfdff;
 }
 
 main {
     order: 1;
     position: relative; /* need this to position inner content */
+    flex: 1 0 auto;
 
     display: flex;
     flex-direction: column;
@@ -229,23 +245,12 @@ footer {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
     font-weight: 400;
-    color: #101018;
+    color: #fdfdff;
     padding: 1%;
     background-color: #4E577A;
 }
 
-footer a {
-    /*text-decoration: none;*/
-    color: #fdfdff;
-}
-
-.footer-contacts {
-    order: 2;
-    color: #fdfdff;
-}
-
-.footer-copyright {
-    order: 1;
+#footer-contacts a {
     color: #fdfdff;
 }
 
@@ -258,13 +263,13 @@ aside {
 }
 
 @media screen and (min-width: 0px) and (max-width: 580px) {
-    #github-link {
+    aside {
         display: none;
     }
 }
 
 @media screen and (min-width: 581px) and (max-width: 1024px) {
-    #github-link {
+    aside {
         display: block;
     }
 }
@@ -272,9 +277,11 @@ aside {
 table {
     padding: 1vw;
 }
+
 th:nth-child(1), td:nth-child(1) {
     width: 150px;
 }
+
 td:not(:first-child) {
     width: 100px;
 }
@@ -289,4 +296,18 @@ tr:nth-child(odd) {
 
 .hide-overflow {
     overflow: hidden;
+}
+
+#big-hi {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20vh;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    color: #101018;
 }
