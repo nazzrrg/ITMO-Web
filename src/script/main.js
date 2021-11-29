@@ -14,9 +14,6 @@ $(document).ready(function () {
             $nav.append($("<a>").attr("href", e["href"]).text(e["text"]))
             console.log(e)
         }
-        if (data["extra_nav_exists"]) {
-            $nav.append($("<div>").attr("id", "nav-drop").text("Еще"))
-        }
 
         $(document.body)
             .prepend($("<header>")
@@ -39,7 +36,6 @@ $(document).ready(function () {
     $.get("./src/data/footer.json", function (data) {
         console.log(data)
         $("#content-and-footer")
-            // .append($("<div>", {id: "prefooter-filler"}))
             .append($("<footer>")
                 .append($("<section>", {id: "footer-contacts"})
                     .append("Contact me: ")
