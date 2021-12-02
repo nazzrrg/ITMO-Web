@@ -1,13 +1,13 @@
-let loadtime = new Date().getTime()
+let start = new Date().getTime()
 console.log("start")
 jQuery.ajaxSetup({async:false});
 $(window).on("load", function () {
-    loadtime = (new Date().getTime() - loadtime) / 1000
     console.log("stop")
+    $("#footer-loadtime").text("Page loaded in " + (new Date().getTime() - start) / 1000 + "s")
 })
 
 $(document).ready(function () {
-    $.get("./src/data/header.json", function (data) {
+    $.ajax({url: "./src/data/header.json", success: function(data) {
         console.log(data)
         let $nav = $("<nav>")
         for (const e of data["nav"]) {
@@ -31,9 +31,9 @@ $(document).ready(function () {
             console.log(file)
             $("a[href$='" + file + "']").addClass("nav-selected")
         }
-    })
+    }, async: false})
 
-    $.get("./src/data/footer.json", function (data) {
+    $.ajax({url: "./src/data/footer.json", success: function (data) {
         console.log(data)
         $("#content-and-footer")
             .append($("<footer>")
@@ -45,7 +45,7 @@ $(document).ready(function () {
                     )
                 )
                 .append($("<section>", {id: "footer-loadtime"})
-                    .text("Page loaded in " + loadtime + "s")
+                    .text("Page loaded in " + (new Date().getTime() - start)/1000 + "s")
                 )
                 .append($("<section>", {id: "footer-copyright"})
                     .append("© ")
@@ -54,9 +54,9 @@ $(document).ready(function () {
                     .append(data["copyright"]["year"])
                 )
             )
-    })
+    }, async: false})
 
-    $.get("./src/data/aside.json", function (data) {
+    $.ajax({url: "./src/data/aside.json", success: function (data) {
         console.log(data)
         $("main")
             .append($("<aside>")
@@ -69,6 +69,6 @@ $(document).ready(function () {
                     )
                 )
             )
-    })
+    }, async: false})
     document.getElementsByTagName("html")[0].style.visibility = "visible"
 })

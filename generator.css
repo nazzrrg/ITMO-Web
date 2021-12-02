@@ -1,0 +1,62 @@
+.generator-form {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+    font-weight: 400;
+    text-align: center;
+    color: #101018;
+}
+
+form > input, form > label{
+    margin: 5px;
+}
+
+form > label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: min-content;
+}
+
+#table-properties {
+    display: flex;
+    align-items: center;
+}
+
+.hidden {
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.table-cell {
+    min-height: 50px;
+    min-width: 40px;
+    background-color: inherit;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    color: #0e0e1e;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected-cell {
+    background-color: rgba(49,255,72,0.8);
+}
