@@ -33,13 +33,6 @@ form > label {
     align-items: center;
 }
 
-.hidden {
-    visibility: hidden;
-    height: 0;
-    padding: 0;
-    margin: 0;
-}
-
 .table-cell {
     min-height: 50px;
     min-width: 40px;

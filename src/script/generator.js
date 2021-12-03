@@ -9,7 +9,7 @@ $(document).ready(function () {
     document.getElementsByTagName("html")[0].style.visibility = "hidden"
     $div_exists = $("#generator-form-exists")
     $div_not_exists = $("#generator-form-create")
-    if (localStorage.key("generated-table") !== null) {
+    if (localStorage.getItem("generated-table") !== null) {
         table_data=[]
         table_data = JSON.parse(localStorage.getItem("generated-table"))
 
