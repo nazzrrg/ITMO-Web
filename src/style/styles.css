@@ -311,6 +311,9 @@ tr:nth-child(odd) {
     text-decoration: none;
     color: #101018;
 }
+#curved-text {
+    height: 100%;
+}
 
 .hidden {
     display: none;
