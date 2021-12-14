@@ -8,13 +8,15 @@
     <meta name="keywords" content="CV, portfolio, ">
     <meta name="author" content="nazzrrg">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/style/prism.css">
+    <link rel="stylesheet" href="src/style/styles.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <title>ITMO-Web</title>
 
-    <script src="./src/script/main.js"></script>
+    <script src="src/script/main.js"></script>
+    <script src="src/script/prism.js"></script>
 </head>
 <body>
 <div id="content-and-footer">
@@ -22,7 +24,7 @@
         <section class="page-block" id="code-sample">
             <h2 class="block-header">Мой кот(д)</h2>
             <div class="block-contents">
-        <pre><code>
+        <pre><code class="language-clike">
 int main(int argc, char **argv) {
     locale::global(locale(""));
 
@@ -31,7 +33,7 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
-    int n = stoi(argv[1]);
+    int n = stoi(argv[1]);s
     string str = string(argv[2]);
     wstring wstr = utf8_to_wstring(str);
 

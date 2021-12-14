@@ -23,7 +23,7 @@ $(document).ready(function () {
             }
         })
         .then(response => response.json())
-        .then(json => display_comments(json))
+        .then(json => setTimeout(() => {display_comments(json)}, 1000))
 })
 
 function display_comments(comments) {
